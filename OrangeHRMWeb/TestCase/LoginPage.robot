@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource    ../Login/common_keyword.robot
+Resource    ../Keyword/common_keyword.robot
 
 Suite Setup   Run keywords
 ...           Set Library Search Order  Plugin  SeleniumLibrary
