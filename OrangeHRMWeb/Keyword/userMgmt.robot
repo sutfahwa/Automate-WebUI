@@ -90,3 +90,50 @@ Select employee name in option list with "${employeeName}"
     Wait Until Element Contains    xpath=//*[@class="oxd-autocomplete-dropdown --positon-bottom"]//*[@class="oxd-autocomplete-option"]    ${employeeName}
     Element Should Contain     xpath=//*[@class="oxd-autocomplete-dropdown --positon-bottom"]//*[@class="oxd-autocomplete-option"]    ${employeeName}
     Click Element    xpath=//*[@class="oxd-autocomplete-dropdown --positon-bottom"]//*[@class="oxd-autocomplete-option"]
+
+### Create user
+Search Employee Name by fill hints with "${hintWord}" in create user form
+    Wait Until Element Is Visible    ${searchEmployee}
+    Click Element    ${searchEmployee}
+    Wait Until Element Is Visible    xpath=//*[@class="oxd-autocomplete-text-input oxd-autocomplete-text-input--focus"]
+    Press Keys    xpath=//*[@class="oxd-autocomplete-text-input oxd-autocomplete-text-input--focus"]     ${hintWord}
+    Wait Until Element Is Visible       xpath=//*[@class="oxd-autocomplete-option"]
+
+Select employee name in option list with "${employeeName}" in create user form   
+    Wait Until Element Is Visible       xpath=//*[@class="oxd-autocomplete-dropdown --positon-bottom"]//*[@class="oxd-autocomplete-option"]
+    Wait Until Element Contains    xpath=//*[@class="oxd-autocomplete-dropdown --positon-bottom"]//*[@class="oxd-autocomplete-option"]    ${employeeName}
+    Element Should Contain     xpath=//*[@class="oxd-autocomplete-dropdown --positon-bottom"]//*[@class="oxd-autocomplete-option"]    ${employeeName}
+    Click Element    xpath=//*[@class="oxd-autocomplete-dropdown --positon-bottom"]//*[@class="oxd-autocomplete-option"]
+
+Select search status role dropdown in create user form
+    Wait Until Element Is Visible    xpath=//*[@class="oxd-grid-item oxd-grid-item--gutters"][3]//*[@class="oxd-select-wrapper"]
+    Click Element    xpath=//*[@class="oxd-grid-item oxd-grid-item--gutters"][3]//*[@class="oxd-select-wrapper"]
+
+Fill in username field with "${username}" in create user form
+    Wait Until Element Is Visible    ${usernameField}
+    Input Text    ${usernameField}    ${username}
+
+Fill in password field with "${password}" in create user form
+    Wait Until Element Is Visible    ${passwordFiledForm}
+    Element Should Be Visible    ${passwordFiledForm}
+    Input Password    ${passwordFiledForm}    ${password}
+    Sleep    2s
+
+Fill in confirm password field with "${password}" in create user form
+    Wait Until Element Is Visible    ${confirmPasswordFieldForm}
+    Element Should Be Visible    ${confirmPasswordFieldForm}
+    Input Password    ${confirmPasswordFieldForm}    ${password}
+
+Click Save user button
+    Wait Until Element Is Visible    ${saveUserBtn}
+    Element Should Be Visible    ${saveUserBtn}
+    Click Element    ${saveUserBtn}
+
+Display toast notification with "${message}"
+    Wait Until Element Is Visible    ${toastNoti}
+    Element Should Contain    ${toastNoti}    ${message}
+
+Display system search section
+    Wait Until Element Is Visible    xpath=//*[@class="oxd-table-filter"]//*[@class="oxd-text oxd-text--h5 oxd-table-filter-title"]
+    Element Should Contain    xpath=//*[@class="oxd-table-filter"]//*[@class="oxd-text oxd-text--h5 oxd-table-filter-title"]    System Users
+

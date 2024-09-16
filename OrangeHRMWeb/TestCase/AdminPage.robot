@@ -80,8 +80,24 @@ Scenario: Create user by fill all field
     Display Add User form 
     Select User Role Dropdown
     Select option "Admin" in dropdown
-    Sleep  3s
-
+    Search Employee Name by fill hints with "Charles" in create user form
+    Select employee name in option list with "Charles Carter" in create user form  
+    Select search status role dropdown in create user form
+    Select option "Enabled" in dropdown
+    Fill in username field with "usernameAutomate" in create user form
+    Fill in password field with "admin123" in create user form
+    Fill in confirm password field with "admin123" in create user form
+    Click Save user button
+    Display toast notification with "Successfully Saved"
+    Display system search section
+    Fill in search username field with "usernameAutomate"
+    Click search button
+    Display username "usernameAutomate" in row 1 with data user role "Admin", Employee Name "Charles Carter" and status "Enabled"
+    Logout from this website
+    Fill in username field with "usernameAutomate"
+    Fill in password field with "admin123"
+    Click Login button
+    Should display Dashboard page
 
 Scenario: Create user by not fill in required field
     [Tags]    @failCase
