@@ -48,4 +48,9 @@ Display error login with text "${text}"
     Wait Until Element Is Visible    ${errorMessageLogin}
     Element Text Should Be    ${errorMessageLogin}    ${text}
 
+### Main Page
+Select menu "${manuName}" at sidebar
+    Wait Until Element Is Visible    xpath=//*[@class="oxd-main-menu"]//*[@class="oxd-main-menu-item-wrapper"]//span[contains(@class, 'oxd-main-menu-item--name') and text()='${manuName}']
+    Click Element    xpath=//*[@class="oxd-main-menu"]//*[@class="oxd-main-menu-item-wrapper"]//span[contains(@class, 'oxd-main-menu-item--name') and text()='${manuName}']
+
 
