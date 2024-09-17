@@ -99,48 +99,86 @@ Scenario: Create user by fill all field
     Click Login button
     Should display Dashboard page
 
-Scenario: Create user by not fill in required field
-    [Tags]    @failCase
-
-
-Scenario: Create user role Admin
-    [Tags]    @successCase
-
-
 Scenario: Create user other role
     [Tags]    @successCase
+    Select menu "Admin" at sidebar
+    Click Add User button
+    Display Add User form 
+    Select User Role Dropdown
+    Select option "ESS" in dropdown
+    Search Employee Name by fill hints with "Charles" in create user form
+    Select employee name in option list with "Charles Carter" in create user form  
+    Select search status role dropdown in create user form
+    Select option "Enabled" in dropdown
+    Fill in username field with "usernameAutomate" in create user form
+    Fill in password field with "admin123" in create user form
+    Fill in confirm password field with "admin123" in create user form
+    Click Save user button
+    Display toast notification with "Successfully Saved"
+    Display system search section
+    Fill in search username field with "usernameAutomate"
+    Click search button
+    Display username "usernameAutomate" in row 1 with data user role "ESS", Employee Name "Charles Carter" and status "Enabled"
+    Logout from this website
+    Fill in username field with "usernameAutomate"
+    Fill in password field with "admin123"
+    Click Login button
+    Should display Dashboard page
 
 Scenario: Create user by fill Very Weak password
     [Tags]    @failCase
-
+    Select menu "Admin" at sidebar
+    Click Add User button
+    Display Add User form 
+    Select User Role Dropdown
+    Select option "ESS" in dropdown
+    Search Employee Name by fill hints with "Charles" in create user form
+    Select employee name in option list with "Charles Carter" in create user form  
+    Select search status role dropdown in create user form
+    Select option "Enabled" in dropdown
+    Fill in username field with "111" in create user form
+    Display warning password with "Very Weak"
+    
 Scenario: Create user by fill strong password
     [Tags]    @successCase
-
-
-Scenario: Create user by fill password less than 7 character
-    [Tags]    @failCase
-
-
-Scenario: Create user by fill in confirm password not match
-    [Tags]    @failCase
-
-
-
-Scenario: Search Employee Name Not found
-    [Tags]    @failCase
-
-
-Scenario: Create user by fill username less than 5 character
-    [Tags]    @failCase
-
-Scenario: Create user successfully and login with user created
-    [Tags]    @successCase    @basic
+    Select menu "Admin" at sidebar
+    Click Add User button
+    Display Add User form 
+    Select User Role Dropdown
+    Select option "ESS" in dropdown
+    Search Employee Name by fill hints with "Charles" in create user form
+    Select employee name in option list with "Charles Carter" in create user form  
+    Select search status role dropdown in create user form
+    Select option "Enabled" in dropdown
+    Fill in username field with "111Test_Strong!" in create user form
+    Display warning password with "Strongest"
 
 Scenario: Create disabled user successfully and login with user created
     [Tags]    @failCase    @basic
+    Select menu "Admin" at sidebar
+    Click Add User button
+    Display Add User form 
+    Select User Role Dropdown
+    Select option "Admin" in dropdown
+    Search Employee Name by fill hints with "Charles" in create user form
+    Select employee name in option list with "Charles Carter" in create user form  
+    Select search status role dropdown in create user form
+    Select option "Disabled" in dropdown
+    Fill in username field with "usernameAutomate" in create user form
+    Fill in password field with "admin123" in create user form
+    Fill in confirm password field with "admin123" in create user form
+    Click Save user button
+    Display toast notification with "Successfully Saved"
+    Display system search section
+    Fill in search username field with "usernameAutomate"
+    Click search button
+    Display username "usernameAutomate" in row 1 with data user role "Admin", Employee Name "Charles Carter" and status "Disabled"
+    Logout from this website
+    Fill in username field with "usernameAutomate"
+    Fill in password field with "admin123"
+    Click Login button
+    Display error login with text "Account disabled"
 
-Scenario: Create user and cancel
-    [Tags]    @failCase
 
 ### Edit user function ###
 Scenario: Edit role of user

@@ -137,3 +137,6 @@ Display system search section
     Wait Until Element Is Visible    xpath=//*[@class="oxd-table-filter"]//*[@class="oxd-text oxd-text--h5 oxd-table-filter-title"]
     Element Should Contain    xpath=//*[@class="oxd-table-filter"]//*[@class="oxd-text oxd-text--h5 oxd-table-filter-title"]    System Users
 
+Display warning password with "${messgae}"
+    Wait Until Element Is Visible    ${warningPassword}
+    Element Should Contain    ${warningPassword}    ${messgae}

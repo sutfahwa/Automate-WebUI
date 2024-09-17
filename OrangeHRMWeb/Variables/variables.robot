@@ -30,3 +30,4 @@ ${confirmPasswordFieldForm}            xpath=//*[@class="oxd-form-row user-passw
 ${saveUserBtn}                         xpath=//*[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]
 ${cancelCreateUserBtn}                 xpath=//*[@class="oxd-button oxd-button--medium oxd-button--ghost"]
 ${toastNoti}                           xpath=//*[@class="oxd-toast oxd-toast--success oxd-toast-container--toast"]//*[@class="oxd-text oxd-text--p oxd-text--toast-message oxd-toast-content-text"]
+${warningPassword}                     xpath=//*[@class="oxd-chip oxd-chip--default orangehrm-password-chip"]
