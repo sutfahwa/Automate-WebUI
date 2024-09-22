@@ -1,13 +1,15 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library    ../common.py
 Resource  ../Variables/variables.robot
 
 *** Keywords ***
 
 Open website OrangerHRM
-    Open Browser  url=${web_URL}    browser=${browser}
+    ${driver_path}=    Get Driver Path With Browser    Chrome
+    Open Browser    ${web_URL}    Chrome    executable_path=${driver_path}
+    Wait Until Element Is Visible  ${login_form_login}     #browser=${browser}
     Maximize Browser Window
-    Wait Until Element Is Visible  ${login_form_login}  
     Wait Until Element Is Visible  ${username_field_login}
     Wait Until Element Is Visible  ${password_field_login}
 
