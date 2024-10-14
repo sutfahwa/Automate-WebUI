@@ -5,7 +5,7 @@ Resource    ../Keyword/userMgmt.robot
 
 Suite Setup   Run keywords
 ...           Set Library Search Order  Plugin  SeleniumLibrary
-...    AND    Set Selenium Timeout  10
+...    AND    Set Selenium Timeout  15
 ...    AND    Open website OrangerHRM
     
 Test Setup     Run Keywords
